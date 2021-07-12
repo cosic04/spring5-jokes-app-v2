@@ -16,6 +16,7 @@ public class JokeController {
 
     @RequestMapping({"/", ""})
     public String getAJoke(Model model){
-        return null;
+        model.addAttribute("joke", chuckNorrisJokeService.getQuote());
+        return "index";
     }
 }
